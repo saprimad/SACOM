@@ -14,5 +14,5 @@ it('runs the bilingual flow, blocks invalid steps, preserves answers, reviews an
  next();choose('[name="sources"][value="news"]');click('#previous');expect(document.querySelector<HTMLInputElement>('[name="familiarity"][value="moderately"]')!.checked).toBe(true);next();expect(document.querySelector<HTMLInputElement>('[name="sources"][value="news"]')!.checked).toBe(true);
  next();next();expect(document.querySelectorAll('[data-edit]').length).toBe(3);click('[data-edit="0"]');choose('[name="familiarity"][value="skip"]');next();next();next();click('[data-lang="en"]');expect(document.querySelector('main')!.textContent).toContain('Prefer not to answer');
  next();await new Promise(resolve=>setTimeout(resolve,0));expect(document.querySelector('h1')!.textContent).toContain('Thank you');expect(document.querySelector('.id')!.textContent).toMatch(/^SACOM-/);
- next();expect(document.querySelector('h1')!.textContent).toContain('Understanding');
+ next();expect(document.querySelector('h1')!.textContent).toContain('A bigger understanding.');
 });

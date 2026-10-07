@@ -16,6 +16,10 @@ npm run preview
 
 Vite prints the local URL (normally http://localhost:5173). Production output is `dist/`. No deployment has been performed.
 
+## Website design
+
+The Apple-inspired SACOM landing page uses spacious typography, original CSS sculptural artwork, responsive feature sections, and English/Bahasa Melayu content. Both landing-page calls to action open the existing participant flow. All visuals are local CSS; the page does not need remote fonts or image services.
+
 ## Participant flow
 
 Welcome → Participant information → Sample eligibility → Demo consent → Three questionnaire sections → Review → Simulated submission → Thank you.
