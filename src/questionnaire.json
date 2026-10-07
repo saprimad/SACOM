@@ -1,0 +1,146 @@
+{
+  "version": "sample-v1",
+  "sampleOnly": true,
+  "sections": [
+    {
+      "id": "familiarity",
+      "title": {
+        "en": "General familiarity",
+        "ms": "Pengetahuan umum"
+      },
+      "description": {
+        "en": "Sample questions to demonstrate the questionnaire format.",
+        "ms": "Soalan contoh untuk menunjukkan format soal selidik."
+      },
+      "questions": [
+        {
+          "id": "familiarity",
+          "label": {
+            "en": "How familiar are you with public discussions about cannabis or marijuana?",
+            "ms": "Sejauh manakah anda biasa dengan perbincangan awam tentang kanabis atau marijuana?"
+          },
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "value": "not",
+              "label": {
+                "en": "Not familiar",
+                "ms": "Tidak biasa"
+              }
+            },
+            {
+              "value": "slightly",
+              "label": {
+                "en": "Slightly familiar",
+                "ms": "Sedikit biasa"
+              }
+            },
+            {
+              "value": "moderately",
+              "label": {
+                "en": "Moderately familiar",
+                "ms": "Agak biasa"
+              }
+            },
+            {
+              "value": "very",
+              "label": {
+                "en": "Very familiar",
+                "ms": "Sangat biasa"
+              }
+            },
+            {
+              "value": "skip",
+              "label": {
+                "en": "Prefer not to answer",
+                "ms": "Tidak mahu menjawab"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "title": {
+        "en": "Information sources",
+        "ms": "Sumber maklumat"
+      },
+      "description": {
+        "en": "Select the options that apply to you.",
+        "ms": "Pilih pilihan yang berkaitan dengan anda."
+      },
+      "questions": [
+        {
+          "id": "sources",
+          "label": {
+            "en": "Where have you encountered information about this topic?",
+            "ms": "Di manakah anda pernah menemui maklumat tentang topik ini?"
+          },
+          "type": "checkbox",
+          "required": true,
+          "options": [
+            {
+              "value": "news",
+              "label": {
+                "en": "News or media",
+                "ms": "Berita atau media"
+              }
+            },
+            {
+              "value": "education",
+              "label": {
+                "en": "Education or research",
+                "ms": "Pendidikan atau penyelidikan"
+              }
+            },
+            {
+              "value": "social",
+              "label": {
+                "en": "Social media",
+                "ms": "Media sosial"
+              }
+            },
+            {
+              "value": "conversation",
+              "label": {
+                "en": "General conversations",
+                "ms": "Perbualan umum"
+              }
+            },
+            {
+              "value": "skip",
+              "label": {
+                "en": "None / prefer not to answer",
+                "ms": "Tiada / tidak mahu menjawab"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reflection",
+      "title": {
+        "en": "Optional reflection",
+        "ms": "Refleksi pilihan"
+      },
+      "description": {
+        "en": "You may leave this sample question blank.",
+        "ms": "Anda boleh membiarkan soalan contoh ini kosong."
+      },
+      "questions": [
+        {
+          "id": "reflection",
+          "label": {
+            "en": "What would make a research questionnaire easier to complete?",
+            "ms": "Apakah yang boleh memudahkan pengisian soal selidik penyelidikan?"
+          },
+          "type": "textarea",
+          "required": false
+        }
+      ]
+    }
+  ]
+}
