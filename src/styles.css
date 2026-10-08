@@ -36,3 +36,32 @@
 .pis-grid p{font-size:13px;line-height:1.75;margin:0;color:#59645a;overflow-wrap:anywhere}
 .pis-grid a{color:#3d6448;text-decoration:underline}
 @media(max-width:700px){.pis-grid{grid-template-columns:1fr;gap:10px}.pis-grid section{padding:18px}}
+
+
+/* SACOM survey identity: minimal botanical leaf and restrained academic presentation */
+:root{--sacom-forest:#294733;--sacom-sage:#728c76;--sacom-paper:#f8f9f6}
+.brand{display:inline-flex;align-items:center;gap:9px;color:var(--sacom-forest)}
+.brand-leaf{width:29px;height:32px;flex:none;color:var(--sacom-forest)}
+.minimal-leaf-art{background:radial-gradient(circle at 50% 45%,#f2f5ee 0%,#e4ece1 64%,#d8e3d6 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.minimal-leaf-art .hero-leaf{width:min(66%,300px);height:auto;max-height:80%;filter:drop-shadow(0 14px 22px #29473320)}
+.minimal-leaf-art .art-label,.minimal-leaf-art .art-coordinate{position:absolute;z-index:2}
+.research-topics,.landing-faq{max-width:1150px;margin:0 auto;padding:95px 44px}
+.research-topics h2,.landing-faq h2{font-size:clamp(30px,4vw,54px);letter-spacing:-.045em;line-height:1.13;margin:18px 0 32px}
+.topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.topic-card{background:#f2f5ef;border:1px solid #e2e9df;border-radius:20px;padding:28px;min-width:0}
+.topic-number{color:#66816a;font-size:12px;letter-spacing:.15em}
+.topic-card h3{font-size:20px;color:#294733;margin:24px 0 8px}
+.topic-card p{font-size:14px;margin:0}
+.landing-faq{padding-top:65px;padding-bottom:105px}
+.faq-item{border-bottom:1px solid #dbe3d9;padding:17px 0}
+.faq-item summary{cursor:pointer;font-weight:650;color:#294733;list-style-position:inside;padding:8px 0}
+.faq-item p{max-width:750px;margin:8px 0 12px 22px}
+.pis-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}
+.pis-summary>div{background:#f0f5ef;border:1px solid #dce6da;border-radius:13px;padding:15px}
+.pis-summary strong,.pis-summary span{display:block}
+.pis-summary strong{font-size:12px;color:#294733}
+.pis-summary span{font-size:13px;color:#5b7064;margin-top:5px}
+.pis-guide{font-size:14px}
+@media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.research-topics,.landing-faq{padding-left:24px;padding-right:24px}.site-links{gap:12px;margin-right:12px}}
+@media(max-width:600px){.topic-grid,.pis-summary{grid-template-columns:1fr}.research-topics,.landing-faq{padding:55px 20px}.topic-card{padding:22px}.brand-leaf{width:23px}.site-links{display:none}.minimal-leaf-art .hero-leaf{width:45%;min-width:125px}}
+@media(prefers-reduced-motion:reduce){.minimal-leaf-art *{animation:none!important;transition:none!important}}
