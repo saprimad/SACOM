@@ -23,7 +23,7 @@ it('runs bilingual draft demo with screening, section navigation and simulated s
  expect(document.querySelector('h1')!.textContent).toContain('Demografi');
  click('#previous');
  expect(document.querySelector<HTMLInputElement>('[name="q2"][value="Yes"]')!.checked).toBe(true);
- next();next();next();next();
+ next();next();next();next();next();
  expect(document.querySelectorAll('[data-edit]').length).toBe(5);
  click('[data-edit="0"]');
  expect(document.querySelector<HTMLInputElement>('[name="q2"][value="Yes"]')!.checked).toBe(true);
