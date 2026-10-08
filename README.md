@@ -54,3 +54,11 @@ gh workflow run deploy.yml
 ```
 
 Check the deployment in the repository's Actions tab. The deployment job reports the live site URL. Hosting does not change the prototype's simulated submission or in-memory response storage.
+
+## Phase 3 presentation draft (October 2026)
+
+The presentation branch loads Q2–Q79 from **Draft Questionaire(2).docx** into five questionnaire sections. Q1 (consent) remains a separate demonstration step. English item text is the source; Bahasa Melayu translations of question labels and answer choices are **not yet validated**, so the interface displays the English source in both language modes for those items. Section labels and navigation are bilingual.
+
+The Q2–Q5 draft screening items are required and all must be answered Yes to continue. The questionnaire items Q6–Q79 are optional in this preview because their final required/skip rules have not been authorised. The Q12 monthly income item is rendered as optional free text. Other items use radio choices; Q19–Q79 use five-point Likert responses. Draft presentation questions can be edited in `src/questionnaire.json` without rebuilding the website design.
+
+**Known limitations before live research:** check source wording and choices against the final Word instrument, complete Malay translation, verify eligibility and item-level skip logic, review privacy and consent, test mobile accessibility, and configure the SurveyMonkey collector. This is a non-collecting demo; the live collector is disabled. “Powered by SurveyMonkey (planned)” is not a claim of active integration.
