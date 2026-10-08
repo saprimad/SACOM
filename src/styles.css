@@ -65,3 +65,13 @@
 @media(max-width:900px){.topic-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.research-topics,.landing-faq{padding-left:24px;padding-right:24px}.site-links{gap:12px;margin-right:12px}}
 @media(max-width:600px){.topic-grid,.pis-summary{grid-template-columns:1fr}.research-topics,.landing-faq{padding:55px 20px}.topic-card{padding:22px}.brand-leaf{width:23px}.site-links{display:none}.minimal-leaf-art .hero-leaf{width:45%;min-width:125px}}
 @media(prefers-reduced-motion:reduce){.minimal-leaf-art *{animation:none!important;transition:none!important}}
+
+/* Single-focus SACOM homepage: no oversized illustration or promotional sections. */
+.landing .hero-minimal{max-width:1000px;min-height:min(75vh,700px);display:flex;align-items:center;justify-content:center;text-align:center;padding:110px 36px 130px}
+.landing .hero-minimal .hero-copy{width:100%;max-width:850px;margin:auto}
+.landing .hero-minimal h1{font-size:clamp(48px,6.8vw,90px);line-height:1.07;color:#294733;letter-spacing:-.06em;max-width:850px;margin:30px auto}
+.landing .hero-minimal .hero-description{max-width:590px;margin:auto;font-size:clamp(15px,2vw,18px)}
+.landing .hero-minimal .hero-actions{justify-content:center;margin-top:36px}
+.landing .hero-minimal .hero-caption{margin-top:28px}
+.landing .hero-affiliation{font-size:12px;margin-top:18px;color:#728076}
+@media(max-width:700px){.landing .hero-minimal{min-height:calc(100svh - 170px);padding:65px 24px 90px}.landing .hero-minimal h1{font-size:clamp(40px,10.2vw,61px);margin:22px auto}.landing .hero-minimal .hero-actions{margin-top:28px}.landing .hero-affiliation{font-size:11px}}
