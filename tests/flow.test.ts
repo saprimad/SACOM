@@ -39,4 +39,13 @@ it('runs bilingual draft demo with screening, section navigation and simulated s
  expect(document.querySelectorAll('.topic-card')).toHaveLength(0);
  expect(document.querySelectorAll('.faq-item')).toHaveLength(0);
  expect(document.querySelector('.hero-leaf')).toBeNull();
+ click('[data-view="about"]');
+ expect(document.querySelector('.about-intro h1')!.textContent).toContain('Understanding perspectives');
+ expect(document.querySelectorAll('.topic-card')).toHaveLength(5);
+ expect(document.querySelectorAll('.faq-item')).toHaveLength(4);
+ click('[data-lang="ms"]');
+ expect(document.querySelector('.about-intro h1')!.textContent).toContain('Memahami perspektif');
+ click('[data-view="home"]');
+ expect(document.querySelector('.hero-minimal h1')!.textContent).toContain('Memahami Penerimaan Sosial');
+ expect(document.querySelectorAll('.topic-card')).toHaveLength(0);
 });
