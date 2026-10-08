@@ -36,6 +36,7 @@ it('runs bilingual draft demo with screening, section navigation and simulated s
  next();
  expect(document.querySelector('h1')!.textContent).toContain('Understanding Social Acceptance');
  expect(document.querySelector('.brand-leaf')).not.toBeNull();
- expect(document.querySelectorAll('.topic-card')).toHaveLength(5);
- expect(document.querySelectorAll('.faq-item')).toHaveLength(4);
+ expect(document.querySelectorAll('.topic-card')).toHaveLength(0);
+ expect(document.querySelectorAll('.faq-item')).toHaveLength(0);
+ expect(document.querySelector('.hero-leaf')).toBeNull();
 });
