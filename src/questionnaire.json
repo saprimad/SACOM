@@ -1,119 +1,116 @@
 {
-  "version": "sample-v1",
+  "version": "draft-questionaire-2-presentation",
   "sampleOnly": true,
+  "source": "Draft Questionaire(2).docx",
+  "translationStatus": "English original; BM question translation pending researcher approval",
   "sections": [
     {
-      "id": "familiarity",
+      "id": "screen",
       "title": {
-        "en": "General familiarity",
-        "ms": "Pengetahuan umum"
+        "en": "Screening questions",
+        "ms": "Soalan saringan"
       },
       "description": {
-        "en": "Sample questions to demonstrate the questionnaire format.",
-        "ms": "Soalan contoh untuk menunjukkan format soal selidik."
+        "en": "Draft instrument for presentation only. English source wording; Bahasa Melayu items pending researcher-approved translation.",
+        "ms": "Instrumen draf untuk pembentangan sahaja. Soalan dalam bahasa Inggeris sementara menunggu terjemahan Bahasa Melayu yang disahkan penyelidik."
       },
       "questions": [
         {
-          "id": "familiarity",
+          "id": "q2",
           "label": {
-            "en": "How familiar are you with public discussions about cannabis or marijuana?",
-            "ms": "Sejauh manakah anda biasa dengan perbincangan awam tentang kanabis atau marijuana?"
+            "en": "Q2. Are you a Malaysian citizen?",
+            "ms": "Q2. Are you a Malaysian citizen?"
           },
           "type": "radio",
           "required": true,
           "options": [
             {
-              "value": "not",
+              "value": "Yes",
               "label": {
-                "en": "Not familiar",
-                "ms": "Tidak biasa"
+                "en": "Yes",
+                "ms": "Yes"
               }
             },
             {
-              "value": "slightly",
+              "value": "No",
               "label": {
-                "en": "Slightly familiar",
-                "ms": "Sedikit biasa"
-              }
-            },
-            {
-              "value": "moderately",
-              "label": {
-                "en": "Moderately familiar",
-                "ms": "Agak biasa"
-              }
-            },
-            {
-              "value": "very",
-              "label": {
-                "en": "Very familiar",
-                "ms": "Sangat biasa"
-              }
-            },
-            {
-              "value": "skip",
-              "label": {
-                "en": "Prefer not to answer",
-                "ms": "Tidak mahu menjawab"
+                "en": "No",
+                "ms": "No"
               }
             }
           ]
-        }
-      ]
-    },
-    {
-      "id": "sources",
-      "title": {
-        "en": "Information sources",
-        "ms": "Sumber maklumat"
-      },
-      "description": {
-        "en": "Select the options that apply to you.",
-        "ms": "Pilih pilihan yang berkaitan dengan anda."
-      },
-      "questions": [
+        },
         {
-          "id": "sources",
+          "id": "q3",
           "label": {
-            "en": "Where have you encountered information about this topic?",
-            "ms": "Di manakah anda pernah menemui maklumat tentang topik ini?"
+            "en": "Q3. Are you aged 18 years and above?",
+            "ms": "Q3. Are you aged 18 years and above?"
           },
-          "type": "checkbox",
+          "type": "radio",
           "required": true,
           "options": [
             {
-              "value": "news",
+              "value": "Yes",
               "label": {
-                "en": "News or media",
-                "ms": "Berita atau media"
+                "en": "Yes",
+                "ms": "Yes"
               }
             },
             {
-              "value": "education",
+              "value": "No",
               "label": {
-                "en": "Education or research",
-                "ms": "Pendidikan atau penyelidikan"
+                "en": "No",
+                "ms": "No"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q4",
+          "label": {
+            "en": "Q4. Are you currently residing in Malaysia?",
+            "ms": "Q4. Are you currently residing in Malaysia?"
+          },
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "en": "Yes",
+                "ms": "Yes"
               }
             },
             {
-              "value": "social",
+              "value": "No",
               "label": {
-                "en": "Social media",
-                "ms": "Media sosial"
+                "en": "No",
+                "ms": "No"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q5",
+          "label": {
+            "en": "Q5. Are you able to understand Bahasa Melayu and/or English?",
+            "ms": "Q5. Are you able to understand Bahasa Melayu and/or English?"
+          },
+          "type": "radio",
+          "required": true,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "en": "Yes",
+                "ms": "Yes"
               }
             },
             {
-              "value": "conversation",
+              "value": "No",
               "label": {
-                "en": "General conversations",
-                "ms": "Perbualan umum"
-              }
-            },
-            {
-              "value": "skip",
-              "label": {
-                "en": "None / prefer not to answer",
-                "ms": "Tiada / tidak mahu menjawab"
+                "en": "No",
+                "ms": "No"
               }
             }
           ]
@@ -121,24 +118,3456 @@
       ]
     },
     {
-      "id": "reflection",
+      "id": "demographics",
       "title": {
-        "en": "Optional reflection",
-        "ms": "Refleksi pilihan"
+        "en": "Section A — Demographics",
+        "ms": "Bahagian A — Demografi"
       },
       "description": {
-        "en": "You may leave this sample question blank.",
-        "ms": "Anda boleh membiarkan soalan contoh ini kosong."
+        "en": "Draft instrument for presentation only. English source wording; Bahasa Melayu items pending researcher-approved translation.",
+        "ms": "Instrumen draf untuk pembentangan sahaja. Soalan dalam bahasa Inggeris sementara menunggu terjemahan Bahasa Melayu yang disahkan penyelidik."
       },
       "questions": [
         {
-          "id": "reflection",
+          "id": "q6",
           "label": {
-            "en": "What would make a research questionnaire easier to complete?",
-            "ms": "Apakah yang boleh memudahkan pengisian soal selidik penyelidikan?"
+            "en": "Q6. What is your age group?",
+            "ms": "Q6. What is your age group?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "18–24",
+              "label": {
+                "en": "18–24",
+                "ms": "18–24"
+              }
+            },
+            {
+              "value": "25–34",
+              "label": {
+                "en": "25–34",
+                "ms": "25–34"
+              }
+            },
+            {
+              "value": "35–44",
+              "label": {
+                "en": "35–44",
+                "ms": "35–44"
+              }
+            },
+            {
+              "value": "45–54",
+              "label": {
+                "en": "45–54",
+                "ms": "45–54"
+              }
+            },
+            {
+              "value": "55–64",
+              "label": {
+                "en": "55–64",
+                "ms": "55–64"
+              }
+            },
+            {
+              "value": "≥65",
+              "label": {
+                "en": "≥65",
+                "ms": "≥65"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q7",
+          "label": {
+            "en": "Q7. What is your gender?",
+            "ms": "Q7. What is your gender?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Male",
+              "label": {
+                "en": "Male",
+                "ms": "Male"
+              }
+            },
+            {
+              "value": "Female",
+              "label": {
+                "en": "Female",
+                "ms": "Female"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q8",
+          "label": {
+            "en": "Q8. What is your ethnicity?",
+            "ms": "Q8. What is your ethnicity?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Malay",
+              "label": {
+                "en": "Malay",
+                "ms": "Malay"
+              }
+            },
+            {
+              "value": "Chinese",
+              "label": {
+                "en": "Chinese",
+                "ms": "Chinese"
+              }
+            },
+            {
+              "value": "Indian",
+              "label": {
+                "en": "Indian",
+                "ms": "Indian"
+              }
+            },
+            {
+              "value": "Bumiputera Sabah",
+              "label": {
+                "en": "Bumiputera Sabah",
+                "ms": "Bumiputera Sabah"
+              }
+            },
+            {
+              "value": "Bumiputera Sarawak",
+              "label": {
+                "en": "Bumiputera Sarawak",
+                "ms": "Bumiputera Sarawak"
+              }
+            },
+            {
+              "value": "Others",
+              "label": {
+                "en": "Others",
+                "ms": "Others"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q9",
+          "label": {
+            "en": "Q9. What is your religion?",
+            "ms": "Q9. What is your religion?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Islam",
+              "label": {
+                "en": "Islam",
+                "ms": "Islam"
+              }
+            },
+            {
+              "value": "Buddhism",
+              "label": {
+                "en": "Buddhism",
+                "ms": "Buddhism"
+              }
+            },
+            {
+              "value": "Hinduism",
+              "label": {
+                "en": "Hinduism",
+                "ms": "Hinduism"
+              }
+            },
+            {
+              "value": "Christianity",
+              "label": {
+                "en": "Christianity",
+                "ms": "Christianity"
+              }
+            },
+            {
+              "value": "Other",
+              "label": {
+                "en": "Other",
+                "ms": "Other"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q10",
+          "label": {
+            "en": "Q10. What is your highest education level?",
+            "ms": "Q10. What is your highest education level?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "No formal education",
+              "label": {
+                "en": "No formal education",
+                "ms": "No formal education"
+              }
+            },
+            {
+              "value": "Primary",
+              "label": {
+                "en": "Primary",
+                "ms": "Primary"
+              }
+            },
+            {
+              "value": "Secondary",
+              "label": {
+                "en": "Secondary",
+                "ms": "Secondary"
+              }
+            },
+            {
+              "value": "STPM or matriculation",
+              "label": {
+                "en": "STPM or matriculation",
+                "ms": "STPM or matriculation"
+              }
+            },
+            {
+              "value": "Diploma",
+              "label": {
+                "en": "Diploma",
+                "ms": "Diploma"
+              }
+            },
+            {
+              "value": "Bachelor’s degree",
+              "label": {
+                "en": "Bachelor’s degree",
+                "ms": "Bachelor’s degree"
+              }
+            },
+            {
+              "value": "Master’s or PhD",
+              "label": {
+                "en": "Master’s or PhD",
+                "ms": "Master’s or PhD"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q11",
+          "label": {
+            "en": "Q11. What is your current employment status?",
+            "ms": "Q11. What is your current employment status?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Government sector",
+              "label": {
+                "en": "Government sector",
+                "ms": "Government sector"
+              }
+            },
+            {
+              "value": "Private sector",
+              "label": {
+                "en": "Private sector",
+                "ms": "Private sector"
+              }
+            },
+            {
+              "value": "Self-employed",
+              "label": {
+                "en": "Self-employed",
+                "ms": "Self-employed"
+              }
+            },
+            {
+              "value": "Student",
+              "label": {
+                "en": "Student",
+                "ms": "Student"
+              }
+            },
+            {
+              "value": "Unemployed",
+              "label": {
+                "en": "Unemployed",
+                "ms": "Unemployed"
+              }
+            },
+            {
+              "value": "Retired",
+              "label": {
+                "en": "Retired",
+                "ms": "Retired"
+              }
+            },
+            {
+              "value": "Others",
+              "label": {
+                "en": "Others",
+                "ms": "Others"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q12",
+          "label": {
+            "en": "Q12. What is your household’s approximate total gross monthly income",
+            "ms": "Q12. What is your household’s approximate total gross monthly income"
           },
           "type": "textarea",
           "required": false
+        },
+        {
+          "id": "q13",
+          "label": {
+            "en": "Q13. Which state or federal territory do you currently live in?",
+            "ms": "Q13. Which state or federal territory do you currently live in?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Johor",
+              "label": {
+                "en": "Johor",
+                "ms": "Johor"
+              }
+            },
+            {
+              "value": "Kedah",
+              "label": {
+                "en": "Kedah",
+                "ms": "Kedah"
+              }
+            },
+            {
+              "value": "Kelantan",
+              "label": {
+                "en": "Kelantan",
+                "ms": "Kelantan"
+              }
+            },
+            {
+              "value": "Melaka",
+              "label": {
+                "en": "Melaka",
+                "ms": "Melaka"
+              }
+            },
+            {
+              "value": "Negeri Sembilan",
+              "label": {
+                "en": "Negeri Sembilan",
+                "ms": "Negeri Sembilan"
+              }
+            },
+            {
+              "value": "Pahang",
+              "label": {
+                "en": "Pahang",
+                "ms": "Pahang"
+              }
+            },
+            {
+              "value": "Perak",
+              "label": {
+                "en": "Perak",
+                "ms": "Perak"
+              }
+            },
+            {
+              "value": "Perlis",
+              "label": {
+                "en": "Perlis",
+                "ms": "Perlis"
+              }
+            },
+            {
+              "value": "Pulau Pinang",
+              "label": {
+                "en": "Pulau Pinang",
+                "ms": "Pulau Pinang"
+              }
+            },
+            {
+              "value": "Sabah",
+              "label": {
+                "en": "Sabah",
+                "ms": "Sabah"
+              }
+            },
+            {
+              "value": "Sarawak",
+              "label": {
+                "en": "Sarawak",
+                "ms": "Sarawak"
+              }
+            },
+            {
+              "value": "Selangor",
+              "label": {
+                "en": "Selangor",
+                "ms": "Selangor"
+              }
+            },
+            {
+              "value": "Terengganu",
+              "label": {
+                "en": "Terengganu",
+                "ms": "Terengganu"
+              }
+            },
+            {
+              "value": "Kuala Lumpur",
+              "label": {
+                "en": "Kuala Lumpur",
+                "ms": "Kuala Lumpur"
+              }
+            },
+            {
+              "value": "Labuan",
+              "label": {
+                "en": "Labuan",
+                "ms": "Labuan"
+              }
+            },
+            {
+              "value": "Putrajaya",
+              "label": {
+                "en": "Putrajaya",
+                "ms": "Putrajaya"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q14",
+          "label": {
+            "en": "Q14. How would you describe your current area of residence?",
+            "ms": "Q14. How would you describe your current area of residence?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Urban",
+              "label": {
+                "en": "Urban",
+                "ms": "Urban"
+              }
+            },
+            {
+              "value": "Semi-urban",
+              "label": {
+                "en": "Semi-urban",
+                "ms": "Semi-urban"
+              }
+            },
+            {
+              "value": "Rural",
+              "label": {
+                "en": "Rural",
+                "ms": "Rural"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q15",
+          "label": {
+            "en": "Q15. Do you live in a district or area near the Malaysia–Thailand border?",
+            "ms": "Q15. Do you live in a district or area near the Malaysia–Thailand border?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "en": "Yes",
+                "ms": "Yes"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "en": "No",
+                "ms": "No"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q16",
+          "label": {
+            "en": "Q16. Have you travelled to Thailand in the past five years?",
+            "ms": "Q16. Have you travelled to Thailand in the past five years?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "en": "Yes",
+                "ms": "Yes"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "en": "No",
+                "ms": "No"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q17",
+          "label": {
+            "en": "Q17. How many times have you visited Thailand since June 2022?",
+            "ms": "Q17. How many times have you visited Thailand since June 2022?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Never",
+              "label": {
+                "en": "Never",
+                "ms": "Never"
+              }
+            },
+            {
+              "value": "Once",
+              "label": {
+                "en": "Once",
+                "ms": "Once"
+              }
+            },
+            {
+              "value": "2–3 times",
+              "label": {
+                "en": "2–3 times",
+                "ms": "2–3 times"
+              }
+            },
+            {
+              "value": "4 times or more",
+              "label": {
+                "en": "4 times or more",
+                "ms": "4 times or more"
+              }
+            },
+            {
+              "value": "Cannot remember",
+              "label": {
+                "en": "Cannot remember",
+                "ms": "Cannot remember"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q18",
+          "label": {
+            "en": "Q18. During any of those visits, have you personally seen a shop selling marijuana-related products in Thailand?",
+            "ms": "Q18. During any of those visits, have you personally seen a shop selling marijuana-related products in Thailand?"
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "Yes",
+              "label": {
+                "en": "Yes",
+                "ms": "Yes"
+              }
+            },
+            {
+              "value": "No",
+              "label": {
+                "en": "No",
+                "ms": "No"
+              }
+            },
+            {
+              "value": "Cannot remember",
+              "label": {
+                "en": "Cannot remember",
+                "ms": "Cannot remember"
+              }
+            },
+            {
+              "value": "Not applicable—I have not visited Thailand since June 2022",
+              "label": {
+                "en": "Not applicable—I have not visited Thailand since June 2022",
+                "ms": "Not applicable—I have not visited Thailand since June 2022"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "awareness",
+      "title": {
+        "en": "Section B — Awareness and exposure",
+        "ms": "Bahagian B — Kesedaran dan pendedahan"
+      },
+      "description": {
+        "en": "Draft instrument for presentation only. English source wording; Bahasa Melayu items pending researcher-approved translation.",
+        "ms": "Instrumen draf untuk pembentangan sahaja. Soalan dalam bahasa Inggeris sementara menunggu terjemahan Bahasa Melayu yang disahkan penyelidik."
+      },
+      "questions": [
+        {
+          "id": "q19",
+          "label": {
+            "en": "Q19. I have heard about marijuana-related policy changes in Thailand.",
+            "ms": "Q19. I have heard about marijuana-related policy changes in Thailand."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q20",
+          "label": {
+            "en": "Q20. I have heard about discussions on medical marijuana in Malaysia.",
+            "ms": "Q20. I have heard about discussions on medical marijuana in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q21",
+          "label": {
+            "en": "Q21. I have seen marijuana-related discussions on social media or online platforms.",
+            "ms": "Q21. I have seen marijuana-related discussions on social media or online platforms."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q22",
+          "label": {
+            "en": "Q22. I have read, watched, or listened to news about marijuana legalisation in other countries.",
+            "ms": "Q22. I have read, watched, or listened to news about marijuana legalisation in other countries."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q23",
+          "label": {
+            "en": "Q23. Public discussion about marijuana has increased in Malaysia in recent years.",
+            "ms": "Q23. Public discussion about marijuana has increased in Malaysia in recent years."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q24",
+          "label": {
+            "en": "Q24. I have been exposed to information about the possible medical benefits of marijuana.",
+            "ms": "Q24. I have been exposed to information about the possible medical benefits of marijuana."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q25",
+          "label": {
+            "en": "Q25. I have been exposed to information about the possible risks or harms of marijuana.",
+            "ms": "Q25. I have been exposed to information about the possible risks or harms of marijuana."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q26",
+          "label": {
+            "en": "Q26. I have discussed marijuana-related issues with family members, friends, colleagues, or community members.",
+            "ms": "Q26. I have discussed marijuana-related issues with family members, friends, colleagues, or community members."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q27",
+          "label": {
+            "en": "Q27. Thailand’s marijuana policy changes have made Malaysians discuss marijuana more openly.",
+            "ms": "Q27. Thailand’s marijuana policy changes have made Malaysians discuss marijuana more openly."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q28",
+          "label": {
+            "en": "Q28. Thailand’s marijuana policy changes may influence how Malaysians view marijuana.",
+            "ms": "Q28. Thailand’s marijuana policy changes may influence how Malaysians view marijuana."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q29",
+          "label": {
+            "en": "Q29. Thailand’s marijuana policy changes may influence how people in Malaysian border communities view marijuana.",
+            "ms": "Q29. Thailand’s marijuana policy changes may influence how people in Malaysian border communities view marijuana."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q30",
+          "label": {
+            "en": "Q30. I am aware that marijuana-related developments in Thailand are discussed in relation to marijuana policy in Malaysia.",
+            "ms": "Q30. I am aware that marijuana-related developments in Thailand are discussed in relation to marijuana policy in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "risks",
+      "title": {
+        "en": "Section C — Perceived risks, benefits and influencing factors",
+        "ms": "Bahagian C — Persepsi risiko, manfaat dan faktor pengaruh"
+      },
+      "description": {
+        "en": "Draft instrument for presentation only. English source wording; Bahasa Melayu items pending researcher-approved translation.",
+        "ms": "Instrumen draf untuk pembentangan sahaja. Soalan dalam bahasa Inggeris sementara menunggu terjemahan Bahasa Melayu yang disahkan penyelidik."
+      },
+      "questions": [
+        {
+          "id": "q31",
+          "label": {
+            "en": "Q31. Marijuana use may harm physical health.",
+            "ms": "Q31. Marijuana use may harm physical health."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q32",
+          "label": {
+            "en": "Q32. Marijuana use may lead to dependence.",
+            "ms": "Q32. Marijuana use may lead to dependence."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q33",
+          "label": {
+            "en": "Q33. Marijuana use may increase mental health problems.",
+            "ms": "Q33. Marijuana use may increase mental health problems."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q34",
+          "label": {
+            "en": "Q34. Marijuana use may affect a person’s judgement.",
+            "ms": "Q34. Marijuana use may affect a person’s judgement."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q35",
+          "label": {
+            "en": "Q35. Social acceptance of marijuana may increase use among young people.",
+            "ms": "Q35. Social acceptance of marijuana may increase use among young people."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q36",
+          "label": {
+            "en": "Q36. Marijuana use may negatively affect families and communities.",
+            "ms": "Q36. Marijuana use may negatively affect families and communities."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q37",
+          "label": {
+            "en": "Q37. Marijuana use may increase risks to public safety.",
+            "ms": "Q37. Marijuana use may increase risks to public safety."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q38",
+          "label": {
+            "en": "Q38. Marijuana may have medical benefits for some patients if properly controlled.",
+            "ms": "Q38. Marijuana may have medical benefits for some patients if properly controlled."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q39",
+          "label": {
+            "en": "Q39. Marijuana may help reduce suffering among some patients.",
+            "ms": "Q39. Marijuana may help reduce suffering among some patients."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q40",
+          "label": {
+            "en": "Q40. Strict regulation may reduce the risks associated with marijuana use.",
+            "ms": "Q40. Strict regulation may reduce the risks associated with marijuana use."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q41",
+          "label": {
+            "en": "Q41. Malaysia needs more local research before making decisions on marijuana policy.",
+            "ms": "Q41. Malaysia needs more local research before making decisions on marijuana policy."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q42",
+          "label": {
+            "en": "Q42. A regulated marijuana industry may bring economic benefits.",
+            "ms": "Q42. A regulated marijuana industry may bring economic benefits."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q43",
+          "label": {
+            "en": "Q43. Marijuana-related products could create job or business opportunities if properly controlled.",
+            "ms": "Q43. Marijuana-related products could create job or business opportunities if properly controlled."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q44",
+          "label": {
+            "en": "Q44. My views on marijuana are influenced by community opinions.",
+            "ms": "Q44. My views on marijuana are influenced by community opinions."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q45",
+          "label": {
+            "en": "Q45. My views on marijuana are influenced by religious or moral values.",
+            "ms": "Q45. My views on marijuana are influenced by religious or moral values."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q46",
+          "label": {
+            "en": "Q46. My views on marijuana are influenced by its legal status in Malaysia.",
+            "ms": "Q46. My views on marijuana are influenced by its legal status in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q47",
+          "label": {
+            "en": "Q47. My views on marijuana are influenced by advice from healthcare professionals.",
+            "ms": "Q47. My views on marijuana are influenced by advice from healthcare professionals."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q48",
+          "label": {
+            "en": "Q48. Media and online discussions may influence how people view marijuana.",
+            "ms": "Q48. Media and online discussions may influence how people view marijuana."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q49",
+          "label": {
+            "en": "Q49. My views on marijuana are influenced by marijuana-related developments in Thailand.",
+            "ms": "Q49. My views on marijuana are influenced by marijuana-related developments in Thailand."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance",
+      "title": {
+        "en": "Section D — Social acceptance of marijuana",
+        "ms": "Bahagian D — Penerimaan sosial marijuana"
+      },
+      "description": {
+        "en": "Draft instrument for presentation only. English source wording; Bahasa Melayu items pending researcher-approved translation.",
+        "ms": "Instrumen draf untuk pembentangan sahaja. Soalan dalam bahasa Inggeris sementara menunggu terjemahan Bahasa Melayu yang disahkan penyelidik."
+      },
+      "questions": [
+        {
+          "id": "q50",
+          "label": {
+            "en": "Q50. Marijuana should be permitted in Malaysia for medical purposes if supported by clinical evidence and regulated.",
+            "ms": "Q50. Marijuana should be permitted in Malaysia for medical purposes if supported by clinical evidence and regulated."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q51",
+          "label": {
+            "en": "Q51. If medical marijuana is permitted, its use should be supervised by qualified healthcare professionals.",
+            "ms": "Q51. If medical marijuana is permitted, its use should be supervised by qualified healthcare professionals."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q52",
+          "label": {
+            "en": "Q52. I am unsure whether medical marijuana should be accepted in Malaysia.",
+            "ms": "Q52. I am unsure whether medical marijuana should be accepted in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q53",
+          "label": {
+            "en": "Q53. People caught with small amounts of marijuana for personal use should receive lighter penalties rather than severe criminal punishment.",
+            "ms": "Q53. People caught with small amounts of marijuana for personal use should receive lighter penalties rather than severe criminal punishment."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q54",
+          "label": {
+            "en": "Q54. People caught using marijuana should be referred for education or treatment rather than being punished only through the criminal justice system.",
+            "ms": "Q54. People caught using marijuana should be referred for education or treatment rather than being punished only through the criminal justice system."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q55",
+          "label": {
+            "en": "Q55. Reducing punishment for marijuana possession may weaken public respect for drug laws.",
+            "ms": "Q55. Reducing punishment for marijuana possession may weaken public respect for drug laws."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q56",
+          "label": {
+            "en": "Q56. Non-medical marijuana use among adults may be socially accepted only if strictly controlled by law.",
+            "ms": "Q56. Non-medical marijuana use among adults may be socially accepted only if strictly controlled by law."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q57",
+          "label": {
+            "en": "Q57. Recreational marijuana use should not be accepted in Malaysia.",
+            "ms": "Q57. Recreational marijuana use should not be accepted in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q58",
+          "label": {
+            "en": "Q58. Accepting recreational marijuana use may increase social and public health problems.",
+            "ms": "Q58. Accepting recreational marijuana use may increase social and public health problems."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q59",
+          "label": {
+            "en": "Q59. I am unsure whether recreational marijuana use should ever be socially accepted in Malaysia.",
+            "ms": "Q59. I am unsure whether recreational marijuana use should ever be socially accepted in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q60",
+          "label": {
+            "en": "Q60. People should be able to discuss marijuana policy openly without being stigmatised.",
+            "ms": "Q60. People should be able to discuss marijuana policy openly without being stigmatised."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q61",
+          "label": {
+            "en": "Q61. Marijuana should not become normalised in Malaysian society.",
+            "ms": "Q61. Marijuana should not become normalised in Malaysian society."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q62",
+          "label": {
+            "en": "Q62. My acceptance of marijuana depends on how the community views it.",
+            "ms": "Q62. My acceptance of marijuana depends on how the community views it."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q63",
+          "label": {
+            "en": "Q63. Marijuana should not be accepted if it conflicts with religious or moral values.",
+            "ms": "Q63. Marijuana should not be accepted if it conflicts with religious or moral values."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q64",
+          "label": {
+            "en": "Q64. Religious or moral values should be considered in decisions about marijuana policy in Malaysia.",
+            "ms": "Q64. Religious or moral values should be considered in decisions about marijuana policy in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q65",
+          "label": {
+            "en": "Q65. Marijuana may be acceptable for medical purposes if it does not conflict with religious guidance.",
+            "ms": "Q65. Marijuana may be acceptable for medical purposes if it does not conflict with religious guidance."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q66",
+          "label": {
+            "en": "Q66. Marijuana should be allowed only if it is strictly regulated by Malaysian law.",
+            "ms": "Q66. Marijuana should be allowed only if it is strictly regulated by Malaysian law."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q67",
+          "label": {
+            "en": "Q67. Marijuana should remain prohibited in Malaysia for both medical and recreational use.",
+            "ms": "Q67. Marijuana should remain prohibited in Malaysia for both medical and recreational use."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q68",
+          "label": {
+            "en": "Q68. My acceptance of marijuana depends on how clearly it is regulated by law.",
+            "ms": "Q68. My acceptance of marijuana depends on how clearly it is regulated by law."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q69",
+          "label": {
+            "en": "Q69. A regulated marijuana industry may create new agricultural opportunities for farmers.",
+            "ms": "Q69. A regulated marijuana industry may create new agricultural opportunities for farmers."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q70",
+          "label": {
+            "en": "Q70. Marijuana-related products may have export potential if they are strictly regulated by law.",
+            "ms": "Q70. Marijuana-related products may have export potential if they are strictly regulated by law."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q71",
+          "label": {
+            "en": "Q71. Marijuana-related tourism may bring economic benefits if it is allowed and strictly regulated by law.",
+            "ms": "Q71. Marijuana-related tourism may bring economic benefits if it is allowed and strictly regulated by law."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q72",
+          "label": {
+            "en": "Q72. Economic benefits should not be used as the main reason to accept marijuana.",
+            "ms": "Q72. Economic benefits should not be used as the main reason to accept marijuana."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q73",
+          "label": {
+            "en": "Q73. My acceptance of marijuana depends on whether its economic benefits outweigh its social risks.",
+            "ms": "Q73. My acceptance of marijuana depends on whether its economic benefits outweigh its social risks."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q74",
+          "label": {
+            "en": "Q74. Marijuana should be accepted in Malaysia for both medical and recreational adult use if strictly regulated by law.",
+            "ms": "Q74. Marijuana should be accepted in Malaysia for both medical and recreational adult use if strictly regulated by law."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q75",
+          "label": {
+            "en": "Q75. Malaysia should not follow countries that have legalised marijuana for recreational use.",
+            "ms": "Q75. Malaysia should not follow countries that have legalised marijuana for recreational use."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q76",
+          "label": {
+            "en": "Q76. I am unsure which marijuana policy approach is most suitable for Malaysia.",
+            "ms": "Q76. I am unsure which marijuana policy approach is most suitable for Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q77",
+          "label": {
+            "en": "Q77. I would accept marijuana in Malaysia if its use is strictly regulated.",
+            "ms": "Q77. I would accept marijuana in Malaysia if its use is strictly regulated."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q78",
+          "label": {
+            "en": "Q78. I do not accept marijuana use in Malaysia under any circumstances.",
+            "ms": "Q78. I do not accept marijuana use in Malaysia under any circumstances."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
+        },
+        {
+          "id": "q79",
+          "label": {
+            "en": "Q79. I am unsure whether marijuana should be socially accepted in Malaysia.",
+            "ms": "Q79. I am unsure whether marijuana should be socially accepted in Malaysia."
+          },
+          "type": "radio",
+          "required": false,
+          "options": [
+            {
+              "value": "1",
+              "label": {
+                "en": "Strongly disagree",
+                "ms": "Sangat tidak setuju"
+              }
+            },
+            {
+              "value": "2",
+              "label": {
+                "en": "Disagree",
+                "ms": "Tidak setuju"
+              }
+            },
+            {
+              "value": "3",
+              "label": {
+                "en": "Neutral",
+                "ms": "Neutral"
+              }
+            },
+            {
+              "value": "4",
+              "label": {
+                "en": "Agree",
+                "ms": "Setuju"
+              }
+            },
+            {
+              "value": "5",
+              "label": {
+                "en": "Strongly agree",
+                "ms": "Sangat setuju"
+              }
+            }
+          ]
         }
       ]
     }
