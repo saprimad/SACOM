@@ -1,18 +1,30 @@
 import './styles.css';
 import config from './questionnaire.json';
-import { anonymousId, completion, eligible, unanswered, DemoRepository, type Language, type Section, type Answers } from './core';
+import { anonymousId, completion, unanswered, visibleQuestions, DemoRepository, type Language, type Section, type Answers, type Question } from './core';
+import { esc, renderContext, renderQuestion } from './questionnaire-view';
+import { ReviewerView } from './reviewer';
 const sections = config.sections as Section[];
 const app = document.querySelector<HTMLDivElement>('#app')!;
-let language: Language = 'en', step = 0, section = 0, errors: string[] = [], answers: Answers = {};
-let landingView: 'home' | 'about' = location.hash === '#about' ? 'about' : 'home';
-let adult = '', understands = '', consent = false, consentDeclined = false, consentAt = '', responseId = anonymousId(), submitted = false, submitting = false;
+type SiteView = 'home' | 'about' | 'questionnaire' | 'reviewer';
+function viewFromHash(): SiteView {
+  const view = location.hash.slice(1);
+  return view === 'about' || view === 'questionnaire' || view === 'reviewer' ? view : 'home';
+}
+let landingView = viewFromHash();
+let language: Language = 'en', step = landingView === 'questionnaire' ? 1 : 0, section = 1, errors: string[] = [], answers: Answers = {};
+let consent = false, consentDeclined = false, consentAt = '', responseId = anonymousId(), submitted = false, submitting = false;
+const consentQuestion = config.consent as Question;
+const reviewer = new ReviewerView([
+  { ...sections[0], title: { en: 'Consent and eligibility', ms: 'Persetujuan dan kelayakan' }, questions: [consentQuestion, ...sections[0].questions] },
+  ...sections.slice(1),
+], config.criteria);
+const activeQuestions = (s: Section) => visibleQuestions(s, answers);
 const repository = new DemoRepository();
 // Live mode remains disabled until the approved SurveyMonkey collector is configured.
 const surveyMonkeyUrl = import.meta.env.VITE_SURVEYMONKEY_URL?.trim() || '';
 const liveReady = false && /^https:\/\//.test(surveyMonkeyUrl);
 const t = (en: string, ms: string) => language === 'en' ? en : ms;
-const esc = (value: unknown) => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]!));
-const names = () => [t('Welcome','Selamat datang'),t('Participant information','Maklumat peserta'),t('Eligibility','Kelayakan'),t('Informed consent','Persetujuan termaklum'),t('Questionnaire','Soal selidik'),t('Review & submit','Semak & hantar'),t('Thank you','Terima kasih')];
+const names = () => [t('Welcome','Selamat datang'),t('Participant information','Maklumat peserta'),t('Informed consent','Persetujuan termaklum'),t('Screening questions','Soalan saringan'),t('Questionnaire','Soal selidik'),t('Review & submit','Semak & hantar'),t('Thank you','Terima kasih')];
 function option(name: string, value: string, label: string, checked: boolean, type = 'radio') { return `<label class="option"><input type="${type}" name="${name}" value="${esc(value)}" ${checked?'checked':''}> <span>${esc(label)}</span></label>`; }
 function render(focus = true) {
  document.documentElement.lang = language;
@@ -30,32 +42,167 @@ function render(focus = true) {
 <section><h2>${t('Privacy and confidentiality','Privasi dan kerahsiaan')}</h2><p>${t('The proposed questionnaire does not request names, identity numbers, telephone numbers, full addresses or precise locations. The live survey’s handling, retention and reporting of data must follow the approved ethics protocol. In this demo, responses stay temporarily in page memory and are not transmitted or saved.','Soal selidik yang dicadangkan tidak meminta nama, nombor pengenalan, nombor telefon, alamat penuh atau lokasi tepat. Pengendalian, penyimpanan dan pelaporan data kajian sebenar mesti mematuhi protokol etika yang diluluskan. Dalam demo ini, jawapan hanya berada sementara dalam memori halaman dan tidak dihantar atau disimpan.')}</p></section>
 <section><h2>${t('Researcher and enquiries','Penyelidik dan pertanyaan')}</h2><p><strong>Mad Sapri Tumiran</strong><br>${t('PhD Candidate, Faculty of Pharmacy, Universiti Teknologi MARA (UiTM)','Calon PhD, Fakulti Farmasi, Universiti Teknologi MARA (UiTM)')}<br><a href="mailto:2024254984@student.uitm.edu.my">2024254984@student.uitm.edu.my</a></p><p>${t('Supervisor: Dr Mohd Shahezwan Abd Wahab, Faculty of Pharmacy, UiTM. Ethics committee contact and approval reference will be added only when confirmed.','Penyelia: Dr Mohd Shahezwan Abd Wahab, Fakulti Farmasi, UiTM. Butiran jawatankuasa etika dan nombor rujukan kelulusan hanya akan ditambah selepas disahkan.')}</p></section>
 </div><div class="notice">${t('DEMO MODE — No responses are collected. This participant information is a draft for academic demonstration and is not evidence of ethics approval or active recruitment.','MOD DEMO — Tiada respons dikumpulkan. Maklumat peserta ini ialah draf demonstrasi akademik dan bukan bukti kelulusan etika atau pengambilan peserta aktif.')}</div>`;
- if(step === 2) content = `<h1 tabindex="-1">${names()[2]}</h1><p>${t('Draft screening criteria for presentation only; not approved eligibility criteria.','Kriteria saringan draf untuk pembentangan sahaja; belum diluluskan.')}</p>${[['adult',t('Are you 18 years of age or older?','Adakah anda berumur 18 tahun atau lebih?'),adult],['understands',t('Can you read English or Bahasa Melayu?','Bolehkah anda membaca bahasa Inggeris atau Bahasa Melayu?'),understands]].map(([id,label,value])=>`<fieldset><legend>${label}</legend>${option(id,'yes',t('Yes','Ya'),value==='yes')}${option(id,'no',t('No','Tidak'),value==='no')}</fieldset>`).join('')}${errors.length ? `<p class="error" role="alert">${adult && understands ? t('You do not meet the sample criteria. You can leave this demo or change an incorrect answer.','Anda tidak memenuhi kriteria contoh. Anda boleh keluar daripada demo atau membetulkan jawapan yang tersilap.') : t('Please answer both questions.','Sila jawab kedua-dua soalan.')}</p>`:''}`;
- if(step === 3) content = `<span class="badge">${t('DEMO CONSENT · NOT A LIVE SURVEY','PERSETUJUAN DEMO · BUKAN SOAL SELIDIK SEBENAR')}</span><h1 tabindex="-1">${names()[3]}</h1><p>${t('Please read the participant information sheet before deciding. Your choice is voluntary and will not affect access to services or community assistance.','Sila baca helaian maklumat peserta sebelum membuat keputusan. Pilihan anda adalah sukarela dan tidak menjejaskan akses kepada perkhidmatan atau bantuan komuniti.')}</p><ul><li>${t('I am at least 18 years old and have read the participant information.','Saya berumur sekurang-kurangnya 18 tahun dan telah membaca maklumat peserta.')}</li><li>${t('I understand the purpose, possible discomfort and voluntary nature of the proposed research.','Saya memahami tujuan, kemungkinan ketidakselesaan dan sifat sukarela penyelidikan yang dicadangkan.')}</li><li>${t('I understand this is a demonstration only, and no answers will be collected or submitted.','Saya memahami bahawa ini hanya demonstrasi dan tiada jawapan akan dikumpul atau dihantar.')}</li></ul><fieldset><legend>${t('Q1. Do you agree to participate in this survey demonstration?','Q1. Adakah anda bersetuju menyertai demonstrasi soal selidik ini?')}</legend>${option('consent','yes',t('Yes — continue','Ya — teruskan'),consent)}${option('consent','no',t('No — do not continue','Tidak — jangan teruskan'),!consent && consentDeclined)}</fieldset>${errors.length?`<p class="error" role="alert">${t('Consent is required to proceed. Select Yes to continue, or leave the demonstration.','Persetujuan diperlukan untuk meneruskan. Pilih Ya untuk teruskan atau tinggalkan demonstrasi.')}</p>`:''}`;
- if(step === 4) {const s=sections[section];content=`<div class="progress-meta"><span>${t('Section','Bahagian')} ${section+1} / ${sections.length} · ${s.title[language]}</span><span>${Math.round((section+1)/sections.length*100)}% ${t('through sections','kemajuan seksyen')}</span></div><progress max="100" value="${Math.round((section+1)/sections.length*100)}" aria-label="${t('Questionnaire section progress','Kemajuan seksyen soal selidik')}"></progress><span class="badge">${t('DEMO MODE — No responses are collected','MOD DEMO — Tiada respons dikumpulkan')}</span><h1 tabindex="-1">${s.title[language]}</h1><p>${s.description[language]}</p><div class="likert-key"><strong>${t('Response scale','Skala jawapan')}</strong><span>${t('1 Strongly disagree · 2 Disagree · 3 Neutral · 4 Agree · 5 Strongly agree','1 Sangat tidak setuju · 2 Tidak setuju · 3 Neutral · 4 Setuju · 5 Sangat setuju')}</span></div>${s.questions.map(q=>q.type==='radio'&&q.options?.length===5&&q.options.every((o,i)=>o.value===String(i+1))?`<fieldset class="likert-row ${errors.includes(q.id)?'invalid':''}"><legend class="sr-only">${esc(q.label[language])}</legend><div class="likert-question">${esc(q.label[language])} <small>${q.required?t('(required)','(wajib)'):''}</small></div><div class="likert-choices" role="radiogroup" aria-label="${esc(q.label[language])}">${q.options.map((o,i)=>`<label class="likert-choice" title="${esc(o.label[language])}"><input type="radio" name="${q.id}" value="${esc(o.value)}" aria-label="${esc(o.label[language])}" ${answers[q.id]===o.value?'checked':''}><span class="likert-number" aria-hidden="true">${i+1}</span><span class="sr-only">${esc(o.label[language])}</span></label>`).join('')}</div>${errors.includes(q.id)?`<p class="error" role="alert">${t('Please select an answer.','Sila pilih jawapan.')}</p>`:''}</fieldset>`:`<fieldset class="${errors.includes(q.id)?'invalid':''}"><legend>${esc(q.label[language])} <small>${q.required?t('(required)','(wajib)'):''}</small></legend>${q.type==='textarea'?`<textarea name="${q.id}" maxlength="2000" aria-label="${esc(q.label[language])}" placeholder="${t('Please avoid identifying details.','Sila elakkan butiran pengenalan.')}">${esc(answers[q.id]||'')}</textarea>`:q.options!.map(o=>option(q.id,o.value,o.label[language],Array.isArray(answers[q.id])?(answers[q.id] as string[]).includes(o.value):answers[q.id]===o.value,q.type)).join('')}${errors.includes(q.id)?`<p class="error" role="alert">${t('Please select an answer.','Sila pilih jawapan.')}</p>`:''}</fieldset>`).join('')}${errors.includes('screen-ineligible')?`<p class="error" role="alert">${t('A No answer ends the screening. Change an incorrect answer to continue.','Jawapan Tidak menamatkan saringan. Betulkan jawapan jika tersilap.')}</p>`:''}`;}
- if(step === 5) content=`<h1 tabindex="-1">${names()[5]}</h1><p>${t('Check your answers before completing this demonstration. You can edit any section.','Semak jawapan anda sebelum melengkapkan demonstrasi ini. Anda boleh mengedit mana-mana bahagian.')}</p>${sections.map((s,i)=>`<div class="review-heading"><h2>${esc(s.title[language])}</h2><button class="link" data-edit="${i}">${t('Edit','Edit')}<span class="sr-only"> — ${esc(s.title[language])}</span></button></div><dl>${s.questions.map(q=>{const a=answers[q.id];const values=Array.isArray(a)?a:a?[a]:[];const label=q.type==='textarea'?a:values.map(v=>q.options?.find(o=>o.value===v)?.label[language]||v).join(', ');return `<div class="review"><dt>${esc(q.label[language])}</dt><dd>${esc(label||t('Not answered','Tidak dijawab'))}</dd></div>`;}).join('')}</dl>`).join('')}<div class="notice">${t('Demo submission only. Your answers will not be saved or sent anywhere.','Penghantaran demo sahaja. Jawapan anda tidak akan disimpan atau dihantar ke mana-mana.')}</div>${errors.length?`<p class="error" role="alert">${t('Submission could not be completed. Please try again.','Penghantaran tidak dapat dilengkapkan. Sila cuba lagi.')}</p>`:''}`;
+ if (step === 2) content = `<span class="badge">${t('DEMO CONSENT','PERSETUJUAN DEMO')}</span><h1 tabindex="-1">${names()[2]}</h1><p>${t('By selecting Yes, I confirm that I have read and understood the study information and voluntarily agree to participate. This website demonstrates the survey flow.', 'Dengan memilih Ya, saya mengesahkan bahawa saya telah membaca dan memahami maklumat kajian serta bersetuju secara sukarela untuk menyertainya. Laman ini menunjukkan aliran soal selidik sebagai demo.')}</p><fieldset><legend>${esc(consentQuestion.label[language])}</legend>${option('consent','yes',t('Yes','Ya'),consent)}${option('consent','no',t('No — end survey','Tidak — tamat soal selidik'),consentDeclined)}</fieldset>${errors.length ? `<p class="error" role="alert">${t('Select Yes to proceed with the demo.','Pilih Ya untuk meneruskan demo.')}</p>` : ''}`;
+ if (step === 3) content = `<h1 tabindex="-1">${names()[3]}</h1><p>${t('Continue only if all eligibility answers are Yes.','Teruskan hanya jika semua jawapan kelayakan ialah Ya.')}</p>${sections[0].questions.map(q => renderQuestion(q, sections[0], language, answers, errors.includes(q.id))).join('')}${errors.includes('screen-ineligible') ? `<p class="error" role="alert">${t('A No answer ends the screening. Change an incorrect answer to continue.','Jawapan Tidak menamatkan saringan. Betulkan jawapan jika tersilap.')}</p>` : ''}`;
+ if (step === 4) {
+   const current = sections[section];
+   const sectionCount = sections.length - 1;
+   const progress = Math.round(section / sectionCount * 100);
+   const scale = current.scale ? `<div class="likert-key"><strong>${t('Response scale','Skala jawapan')}</strong><span>${current.scale.map(o => `${o.value} ${esc(o.label[language])}`).join(' · ')}</span></div>` : '';
+   content = `<div class="progress-meta"><span>${t('Section','Bahagian')} ${section} / ${sectionCount}</span><span>${completion(sections, answers)}% ${t('required answers','jawapan wajib')}</span></div><progress max="100" value="${progress}" aria-label="${t('Questionnaire section progress','Kemajuan bahagian soal selidik')}"></progress><span class="badge">${t('SAMPLE QUESTIONNAIRE','CONTOH SOAL SELIDIK')}</span><h1 tabindex="-1">${esc(current.title[language])}</h1>${renderContext(current, language)}${scale}${activeQuestions(current).map(q => renderQuestion(q, current, language, answers, errors.includes(q.id))).join('')}`;
+ }
+ if (step === 0 && landingView === 'reviewer') content = reviewer.render(language);
+ if(step === 5) content=`<h1 tabindex="-1">${names()[5]}</h1><p>${t('Check your answers before completing this demonstration. You can edit any section.','Semak jawapan anda sebelum melengkapkan demonstrasi ini. Anda boleh mengedit mana-mana bahagian.')}</p>${sections.map((s,i)=>`<div class="review-heading"><h2>${esc(s.title[language])}</h2><button class="link" data-edit="${i}">${t('Edit','Edit')}<span class="sr-only"> — ${esc(s.title[language])}</span></button></div><dl>${activeQuestions(s).map(q=>{const a=answers[q.id];const values=Array.isArray(a)?a:a?[a]:[];const label=q.type==='textarea'||q.type==='number'?a:values.map(v=>{const option=q.options?.find(o=>o.value===v);const detail=option?.specify?answers[q.id+'-detail-'+v]:'';return [option?.label[language].replace(/_+/g,'').trim()||v,detail].filter(Boolean).join(' ');}).join(', ');return `<div class="review"><dt>${esc(q.label[language])}</dt><dd>${esc(label||t('Not answered','Tidak dijawab'))}</dd></div>`;}).join('')}</dl>`).join('')}<div class="notice">${t('Demo submission only. Your answers will not be saved or sent anywhere.','Penghantaran demo sahaja. Jawapan anda tidak akan disimpan atau dihantar ke mana-mana.')}</div>${errors.length?`<p class="error" role="alert">${t('Submission could not be completed. Please try again.','Penghantaran tidak dapat dilengkapkan. Sila cuba lagi.')}</p>`:''}`;
  if(step === 6) content=`<span class="badge">${t('DEMONSTRATION COMPLETE','DEMONSTRASI SELESAI')}</span><h1 tabindex="-1">${t('Thank you for taking part.','Terima kasih atas penyertaan anda.')}</h1><p>${t('You have completed the SACOM prototype. This submission was simulated; no research response has been stored.','Anda telah melengkapkan prototaip SACOM. Penghantaran ini disimulasikan; tiada respons penyelidikan disimpan.')}</p><p>${t('Your anonymous demo response ID','ID respons demo tanpa nama anda')}</p><div class="id">${esc(responseId)}</div><p>${t('This ID demonstrates how a future response receipt could look.','ID ini menunjukkan contoh resit respons pada masa hadapan.')}</p>`;
- app.innerHTML=`<div class="shell ${step===0?'landing':'questionnaire'}"><header class="header"><a class="brand" href="#" aria-label="SACOM home"><svg class="brand-leaf" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 29V7M16 23C8 19 5 14 4 11C10 12 14 16 16 21M16 23C24 19 27 14 28 11C22 12 18 16 16 21M16 18C12 11 13 6 16 2C19 6 20 11 16 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>SACOM<small>${t('SOCIAL ACCEPTANCE RESEARCH','PENYELIDIKAN PENERIMAAN SOSIAL')}</small></a><nav class="top-nav" aria-label="${t('Site navigation','Navigasi laman')}"><a href="#home" data-view="home" ${step===0&&landingView==='home'?'aria-current="page"':''}>${t('Home','Utama')}</a><a href="#about" data-view="about" ${step===0&&landingView==='about'?'aria-current="page"':''}>${t('About the Study','Mengenai Kajian')}</a></nav><div class="language" aria-label="${t('Language','Bahasa')}"><button data-lang="en" aria-pressed="${language==='en'}">English</button><button data-lang="ms" aria-pressed="${language==='ms'}">Bahasa Melayu</button></div></header>${step===0?`<main>${content}</main>`:`<div class="layout"><aside class="sidebar"><div class="eyebrow">${t('A space for perspectives','Ruang untuk perspektif')}</div><h2>${t('Every perspective starts with a voice.','Setiap perspektif bermula dengan suara.')}</h2><ol class="steps">${names().map((n,i)=>`<li class="${i===step?'active':''}" ${i===step?'aria-current="step"':''}><span>${i<step?'✓':i+1}</span>${n}</li>`).join('')}</ol><p class="note">${t('Sample prototype · No personal details requested','Prototaip contoh · Tiada butiran peribadi diminta')}</p></aside><main class="card">${content}<div class="nav">${step>0&&step<6?`<button class="secondary" id="previous" ${submitting?'disabled':''}>← ${t('Previous','Sebelumnya')}</button>`:'<span></span>'}<button class="primary" id="next" ${submitting?'disabled':''}>${step===6?t('Start a new demo','Mulakan demo baharu'):step===5?t('Complete demo submission','Lengkapkan penghantaran demo'):step===0?t('Begin questionnaire','Mulakan soal selidik'):t('Continue','Teruskan')} ${step===6?'':'→'}</button></div></main></div>`}<footer>${t('SACOM · Academic research prototype · Demo mode · Powered by SurveyMonkey (planned)','SACOM · Prototaip penyelidikan akademik · Mod demo · Powered by SurveyMonkey (dirancang)')} · ${liveReady ? t('Live collector ready','Pautan survei tersedia') : t('SurveyMonkey not connected','SurveyMonkey belum disambungkan')}</footer></div>`;
- app.querySelectorAll<HTMLButtonElement>('[data-begin]').forEach(b=>b.onclick=()=>{step=1;render();window.scrollTo({top:0});});
- app.querySelectorAll<HTMLAnchorElement>('[data-view]').forEach(a=>a.onclick=e=>{e.preventDefault();landingView=a.dataset.view as 'home'|'about';step=0;history.replaceState(null,'',landingView==='about'?'#about':'#home');render();window.scrollTo({top:0});});
- app.querySelector<HTMLAnchorElement>('.brand')!.onclick=e=>{e.preventDefault();step=0;landingView='home';history.replaceState(null,'',location.pathname+location.search);errors=[];render(false);window.scrollTo({top:0});};
- app.querySelectorAll<HTMLButtonElement>('[data-lang]').forEach(b=>b.onclick=()=>{language=b.dataset.lang as Language;render(false);});
- app.querySelectorAll<HTMLButtonElement>('[data-edit]').forEach(b=>b.onclick=()=>{section=Number(b.dataset.edit);step=4;errors=[];render();});
- app.querySelector('#previous')?.addEventListener('click',()=>{errors=[];if(step===4&&section>0)section--;else step--;render();});
- app.querySelector('#next')?.addEventListener('click',()=>void next());
- app.querySelectorAll<HTMLInputElement|HTMLTextAreaElement>('input,textarea').forEach(input=>input.addEventListener('input',()=>{
- if(input.name==='adult')adult=input.value;else if(input.name==='understands')understands=input.value;else if(input.name==='consent'){consent=input.value==='yes';consentDeclined=input.value==='no';}
- else {answers[input.name]=input.type==='checkbox'?Array.from(app.querySelectorAll<HTMLInputElement>(`input[name="${input.name}"]:checked`)).map(i=>i.value):input.value; const progress=app.querySelector('progress');if(progress)progress.value=Math.round((section+1)/sections.length*100);const meta=app.querySelector('.progress-meta span:last-child');if(meta)meta.textContent=`${Math.round((section+1)/sections.length*100)}% ${t('through sections','kemajuan seksyen')}`;}
- }));
- if(focus) app.querySelector<HTMLElement>('h1')?.focus();
+ app.innerHTML=`<div class="shell ${step===0?'landing':'questionnaire'}"><header class="header"><a class="brand" href="#" aria-label="SACOM home"><svg class="brand-leaf" viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M16 29V7M16 23C8 19 5 14 4 11C10 12 14 16 16 21M16 23C24 19 27 14 28 11C22 12 18 16 16 21M16 18C12 11 13 6 16 2C19 6 20 11 16 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>SACOM<small>${t('SOCIAL ACCEPTANCE RESEARCH','PENYELIDIKAN PENERIMAAN SOSIAL')}</small></a><nav class="top-nav" aria-label="${t('Site navigation','Navigasi laman')}"><a href="#home" data-view="home" ${step===0&&landingView==='home'?'aria-current="page"':''}>${t('Home','Utama')}</a><a href="#about" data-view="about" ${step===0&&landingView==='about'?'aria-current="page"':''}>${t('About the Study','Mengenai Kajian')}</a><a href="#questionnaire" data-view="questionnaire" ${landingView==='questionnaire'?'aria-current="page"':''}>${t('Sample Questionnaire','Contoh Soal Selidik')}</a><a href="#reviewer" data-view="reviewer" ${step===0&&landingView==='reviewer'?'aria-current="page"':''}>${t('Reviewer','Penilai')}</a></nav><div class="language" aria-label="${t('Language','Bahasa')}"><button data-lang="en" aria-pressed="${language==='en'}">English</button><button data-lang="ms" aria-pressed="${language==='ms'}">Bahasa Melayu</button></div></header>${step===0?`<main>${content}</main>`:`<div class="layout"><aside class="sidebar"><div class="eyebrow">${t('A space for perspectives','Ruang untuk perspektif')}</div><h2>${t('Every perspective starts with a voice.','Setiap perspektif bermula dengan suara.')}</h2><ol class="steps">${names().map((n,i)=>`<li class="${i===step?'active':''}" ${i===step?'aria-current="step"':''}><span>${i<step?'✓':i+1}</span>${n}</li>`).join('')}</ol><p class="note">${t('Sample prototype · No personal details requested','Prototaip contoh · Tiada butiran peribadi diminta')}</p></aside><main class="card">${content}<div class="nav">${step>0&&step<6?`<button class="secondary" id="previous" ${submitting?'disabled':''}>← ${t('Previous','Sebelumnya')}</button>`:'<span></span>'}<button class="primary" id="next" ${submitting?'disabled':''}>${step===6?t('Start a new demo','Mulakan demo baharu'):step===5?t('Complete demo submission','Lengkapkan penghantaran demo'):step===0?t('Begin questionnaire','Mulakan soal selidik'):t('Continue','Teruskan')} ${step===6?'':'→'}</button></div></main></div>`}<footer>${t('SACOM · Academic research prototype · Demo mode · Powered by SurveyMonkey (planned)','SACOM · Prototaip penyelidikan akademik · Mod demo · Powered by SurveyMonkey (dirancang)')} · ${liveReady ? t('Live collector ready','Pautan survei tersedia') : t('SurveyMonkey not connected','SurveyMonkey belum disambungkan')}</footer></div>`;
+ if (step === 0 && landingView === 'reviewer') reviewer.bind(app, language, () => render(false));
+ app.querySelectorAll<HTMLButtonElement>('[data-begin]').forEach(button => button.onclick = () => navigate('questionnaire'));
+ app.querySelectorAll<HTMLAnchorElement>('[data-view]').forEach(link => link.onclick = event => {
+   event.preventDefault();
+   navigate(link.dataset.view as SiteView);
+ });
+ app.querySelector<HTMLAnchorElement>('.brand')!.onclick = event => { event.preventDefault(); navigate('home'); };
+ app.querySelectorAll<HTMLButtonElement>('[data-lang]').forEach(button => button.onclick = () => {
+   language = button.dataset.lang as Language;
+   render(false);
+   app.querySelector<HTMLButtonElement>(`[data-lang="${language}"]`)?.focus();
+ });
+ app.querySelectorAll<HTMLButtonElement>('[data-edit]').forEach(button => button.onclick = () => {
+   section = Number(button.dataset.edit);
+   step = section === 0 ? 3 : 4;
+   errors = [];
+   render();
+ });
+ app.querySelector('#previous')?.addEventListener('click', () => {
+   errors = [];
+   if (step === 4 && section > 1) section--;
+   else if (step === 5) { step = 4; section = sections.length - 1; }
+   else step--;
+   render();
+ });
+ app.querySelector('#next')?.addEventListener('click', () => void next());
+ if (step >= 2 && step <= 4) {
+   app.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>('input,textarea').forEach(input => {
+     input.addEventListener('input', () => updateAnswer(input));
+   });
+ }
+ if (focus) app.querySelector<HTMLElement>('h1')?.focus();
 }
-async function next(){
- errors=[];
- if(step===2&&!eligible(adult,understands)){errors=['eligibility'];render();return;}
- if(step===3){if(!consent){errors=['consent'];render();return;}consentAt=new Date().toISOString();}
- if(step===4){errors=unanswered(sections[section].questions,answers);if(errors.length){render();return;}if(sections[section].id==='screen' && sections[section].questions.some(q=>answers[q.id]!=='Yes')){errors=['screen-ineligible'];render();return;}if(section<sections.length-1){section++;render();return;}}
- if(step===5){if(submitted||submitting)return;const missing=sections.findIndex(s=>unanswered(s.questions,answers).length>0);if(missing>=0){section=missing;step=4;errors=unanswered(sections[missing].questions,answers);render();return;}submitting=true;render(false);try{await repository.submit({responseId,questionnaireVersion:config.version,language,consent:{accepted:true,acceptedAt:consentAt},answers:structuredClone(answers),submittedAt:new Date().toISOString()});submitted=true;answers={};}catch{errors=['submit'];submitting=false;render();return;}submitting=false;}
- if(step===6){step=0;section=0;answers={};adult='';understands='';consent=false;consentDeclined=false;consentAt='';submitted=false;responseId=anonymousId();render();return;}
- step++;render();
+
+function navigate(view: SiteView, writeHash = true) {
+  if (submitting) return;
+  if (view === 'questionnaire' && submitted) resetDemo();
+  landingView = view;
+  step = view === 'questionnaire' ? 1 : 0;
+  errors = [];
+  if (writeHash) history.replaceState(null, '', `#${view}`);
+  render();
+  window.scrollTo({ top: 0 });
 }
+
+function updateAnswer(input: HTMLInputElement | HTMLTextAreaElement) {
+  const { name, value } = input;
+  if (name === 'consent') {
+    consent = value === 'yes';
+    consentDeclined = value === 'no';
+    return;
+  }
+  if (input instanceof HTMLInputElement && input.type === 'checkbox') {
+    const checkboxes = Array.from(app.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`));
+    const exclusive = sections[section]?.questions.find(q => q.id === name)?.options?.find(o => o.exclusive)?.value;
+    if (input.checked && exclusive) {
+      for (const checkbox of checkboxes) {
+        if (checkbox !== input && (value === exclusive || checkbox.value === exclusive)) checkbox.checked = false;
+      }
+    }
+    answers[name] = checkboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+  } else {
+    answers[name] = value;
+  }
+  if (name === 'C1') {
+    if (value !== 'Yes') {
+      for (const question of sections[section].questions) if (question.condition === 'visited') delete answers[question.id];
+    }
+    render(false);
+    app.querySelector<HTMLInputElement>(`input[name="C1"][value="${value}"]`)?.focus({ preventScroll: true });
+    return;
+  }
+  app.querySelectorAll<HTMLLabelElement>(`[data-detail-for="${name}"]`).forEach(label => {
+    const option = label.dataset.option!;
+    const current = answers[name];
+    const selected = Array.isArray(current) ? current.includes(option) : current === option;
+    label.hidden = !selected;
+    const field = label.querySelector('input')!;
+    field.disabled = !selected;
+    if (!selected) { field.value = ''; delete answers[field.name]; }
+  });
+  const progress = app.querySelector('.progress-meta span:last-child');
+  if (progress) progress.textContent = `${completion(sections, answers)}% ${t('required answers','jawapan wajib')}`;
+}
+
+async function next() {
+  errors = [];
+  if (step === 0) { navigate('questionnaire'); return; }
+  if (step === 2) {
+    if (!consent) { errors = ['consent']; render(); return; }
+    consentAt = new Date().toISOString();
+  }
+  if (step === 3) {
+    const screening = sections[0].questions;
+    errors = unanswered(screening, answers);
+    if (!errors.length && screening.some(q => answers[q.id] !== 'Yes')) errors = ['screen-ineligible'];
+    if (errors.length) { render(); return; }
+    section = 1;
+  }
+  if (step === 4) {
+    errors = unanswered(activeQuestions(sections[section]), answers);
+    app.querySelectorAll<HTMLInputElement>('input[type="number"]').forEach(input => {
+      if (!input.validity.valid) errors.push(input.name);
+    });
+    if (errors.length) { render(); return; }
+    if (section < sections.length - 1) { section++; render(); return; }
+  }
+  if (step === 5) {
+    if (submitted || submitting) return;
+    if (!consent) { step = 2; render(); return; }
+    const missing = sections.findIndex(s => unanswered(activeQuestions(s), answers).length > 0);
+    if (missing >= 0 || sections[0].questions.some(q => answers[q.id] !== 'Yes')) {
+      section = missing > 0 ? missing : 1;
+      step = missing > 0 ? 4 : 3;
+      render();
+      return;
+    }
+    submitting = true;
+    render(false);
+    try {
+      await repository.submit({ responseId, questionnaireVersion: config.version, language, consent: { accepted: true, acceptedAt: consentAt }, answers: structuredClone(answers), submittedAt: new Date().toISOString() });
+      submitted = true;
+      answers = {};
+    } catch {
+      errors = ['submit'];
+      submitting = false;
+      render();
+      return;
+    }
+    submitting = false;
+  }
+  if (step === 6) {
+    resetDemo();
+    navigate('home');
+    return;
+  }
+  step++;
+  render();
+}
+function resetDemo() {
+  section = 1;
+  answers = {};
+  consent = false;
+  consentDeclined = false;
+  consentAt = '';
+  submitted = false;
+  responseId = anonymousId();
+}
+
+window.addEventListener('hashchange', () => navigate(viewFromHash(), false));
 render(false);

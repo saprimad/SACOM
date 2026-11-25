@@ -1,4 +1,4 @@
-# SACOM — Version 1
+# SACOM
 
 Social Acceptance of Cannabis/Marijuana. A mobile-first bilingual academic questionnaire **prototype**, with sample content only. This is not a validated questionnaire or an approved active study.
 
@@ -14,7 +14,7 @@ npm run build
 npm run preview
 ```
 
-Vite prints the local URL (normally http://localhost:5173). Production output is `dist/`. No deployment has been performed.
+Vite prints the local URL (normally http://localhost:5173). Production output is `dist/`.
 
 ## Website design
 
@@ -22,15 +22,19 @@ The Apple-inspired SACOM landing page uses spacious typography, original CSS scu
 
 ## Participant flow
 
-Welcome → Participant information → Sample eligibility → Demo consent → Three questionnaire sections → Review → Simulated submission → Thank you.
+Sample Questionnaire opens the bilingual draft from the 25 November 2026 CVI form. The flow includes participant information, demo consent, four screening items, six questionnaire sections, review, and simulated submission. It contains 80 items including consent and screening. A No answer to C1 skips the dependent Thailand-visit questions.
 
-English and Bahasa Melayu can be changed at any point. Required questions offer a non-disclosure choice. Optional free text is limited to 2,000 characters and warns against personal information. Previous/Next and review editing preserve answers. The section counter tracks position; the percentage tracks answered **required questions**, not time or consent steps. Optional sections can show 100% before review.
+English and Bahasa Melayu can be changed at any point. Previous/Next and review editing preserve answers in the tab. The section counter tracks position, and the percentage tracks answered required questions. The B1 no-information option is exclusive.
 
 ## Privacy and limitations
 
 Responses exist only in tab memory; refreshing or closing the page clears them. No local storage, cookies, analytics, API requests, or database are used by the application. Submission is simulated and answers are cleared after it completes. An anonymous UUID receipt identifies the demo session; it is not a saved response or recovery token. The development server and any future hosting provider may have infrastructure logs; those are outside the questionnaire response model. Do not enter real research data.
 
-The 18+ and language criteria are demonstrations, not approved SACOM eligibility criteria. All participant information and consent text must be replaced with approved study materials before real recruitment. Bahasa Melayu wording requires researcher review.
+The screening criteria and participant information are for this demonstration. Confirm the final materials and ethics approval before recruitment.
+
+## Reviewer tab
+
+The same 80 draft items are available for bilingual review. Ratings follow the form: relevance 1–4, and essentiality, clarity and adequacy 1–3. The tab keeps ratings and comments in memory and can export a CSV to the reviewer’s device. Refreshing clears the tab’s work. The site does not collect reviews.
 
 ## Replace the sample questions
 

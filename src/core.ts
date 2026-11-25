@@ -1,13 +1,40 @@
 export type Language = 'en' | 'ms';
 export type Localized = Record<Language, string>;
-export interface Question { id: string; label: Localized; type: 'radio' | 'checkbox' | 'textarea'; required: boolean; options?: {value: string; label: Localized}[] }
-export interface Section { id: string; title: Localized; description: Localized; questions: Question[] }
+export interface QuestionOption {
+  value: string;
+  label: Localized;
+  exclusive?: boolean;
+  specify?: boolean;
+}
+export interface Question {
+  id: string;
+  label: Localized;
+  type: 'radio' | 'checkbox' | 'textarea' | 'number';
+  required: boolean;
+  options?: QuestionOption[];
+  description?: Localized;
+  subheading?: Localized;
+  condition?: 'visited';
+  units?: Localized;
+  minimum?: number;
+}
+export interface Section {
+  id: string;
+  title: Localized;
+  description: Localized;
+  questions: Question[];
+  intro?: Localized[];
+  scale?: QuestionOption[];
+}
 export type Answers = Record<string, string | string[]>;
+export function visibleQuestions(section: Section, answers: Answers): Question[] {
+  return section.questions.filter(q => !q.condition || answers.C1 === 'Yes');
+}
 export function unanswered(questions: Question[], answers: Answers): string[] {
   return questions.filter(q => q.required && (!answers[q.id] || (Array.isArray(answers[q.id]) ? answers[q.id].length === 0 : !String(answers[q.id]).trim()))).map(q => q.id);
 }
 export function completion(sections: Section[], answers: Answers): number {
-  const questions = sections.flatMap(s => s.questions).filter(q => q.required);
+  const questions = sections.flatMap(s => visibleQuestions(s, answers)).filter(q => q.required);
   return questions.length ? Math.round((questions.length - unanswered(questions, answers).length) / questions.length * 100) : 100;
 }
 export function eligible(adult: string, understands: string): boolean { return adult === 'yes' && understands === 'yes'; }
