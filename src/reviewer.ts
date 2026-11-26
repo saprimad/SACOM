@@ -127,7 +127,7 @@ export class ReviewerView {
     const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'SACOM-CVI-review-25-Nov-2026.csv';
+    link.download = 'PACOM-CVI-review-25-Nov-2026.csv';
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
