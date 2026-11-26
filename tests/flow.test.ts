@@ -25,7 +25,9 @@ it('runs the updated bilingual participant demo through consent, screening and b
   document.body.innerHTML = '<div id="app"></div>';
   vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   await import('../src/main');
+  expect(heading()).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
   click('[data-view="questionnaire"]');
+  expect(document.querySelector('.pis-lead')?.textContent).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
   next();
   expect(heading()).toContain('Informed consent');
   next();
@@ -80,12 +82,12 @@ it('runs the updated bilingual participant demo through consent, screening and b
   expect(heading()).toContain('Thank you');
   expect(document.querySelector('.id')!.textContent).toMatch(/^SACOM-/);
   next();
-  expect(heading()).toContain('Understanding Social Acceptance');
+  expect(heading()).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
   click('[data-view="about"]');
   expect(heading()).toContain('Understanding perspectives');
   expect(document.querySelectorAll('.topic-card')).toHaveLength(5);
   click('[data-view="home"]');
-  expect(heading()).toContain('Understanding Social Acceptance');
+  expect(heading()).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
 });
 
 it('makes every CVI item available and preserves typed ratings across sections and languages', () => {
@@ -109,6 +111,8 @@ it('makes every CVI item available and preserves typed ratings across sections a
   expect(document.querySelector<HTMLTextAreaElement>('#comment-q1')?.value).toBe('A sample comment');
   click('[data-view="questionnaire"]');
   expect(heading()).toContain('Maklumat peserta');
+  expect(document.querySelector('.pis-lead')?.textContent).toBe('Persepsi Masyarakat Malaysia terhadap Ganja: Kajian Keratan Rentas');
+  expect(document.title).toBe('SACOM · Persepsi Masyarakat Malaysia terhadap Ganja: Kajian Keratan Rentas');
   click('[data-view="reviewer"]');
   expect(document.querySelector<HTMLSelectElement>('#review-q1-relevance')?.value).toBe('4');
 });
