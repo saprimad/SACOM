@@ -25,7 +25,7 @@ it('runs the updated bilingual participant demo through consent, screening and b
   document.body.innerHTML = '<div id="app"></div>';
   vi.spyOn(window, 'scrollTo').mockImplementation(() => {});
   await import('../src/main');
-  expect(heading()).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
+  expect(heading()).toBe('Public Perceptions of Marijuana');
   click('[data-view="questionnaire"]');
   expect(document.querySelector('.pis-lead')?.textContent).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
   next();
@@ -82,12 +82,15 @@ it('runs the updated bilingual participant demo through consent, screening and b
   expect(heading()).toContain('Thank you');
   expect(document.querySelector('.id')!.textContent).toMatch(/^SACOM-/);
   next();
-  expect(heading()).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
+  expect(heading()).toBe('Public Perceptions of Marijuana');
   click('[data-view="about"]');
   expect(heading()).toContain('Understanding perspectives');
   expect(document.querySelectorAll('.topic-card')).toHaveLength(5);
   click('[data-view="home"]');
-  expect(heading()).toBe('Public Perceptions of Marijuana in Malaysia: A Cross-Sectional Study');
+  expect(heading()).toBe('Public Perceptions of Marijuana');
+  click('[data-lang="ms"]');
+  expect(heading()).toBe('Persepsi Masyarakat terhadap Ganja');
+  click('[data-lang="en"]');
 });
 
 it('makes every CVI item available and preserves typed ratings across sections and languages', () => {
